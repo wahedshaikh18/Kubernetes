@@ -1,1 +1,42 @@
 Ho to start kub8s dashborad you your laptop
+go to below url for downloading the node binarires 
+
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#node-binaries 
+
+Look for kubernetes-node-windows-amd64.tar.gz in node binaries 
+download the zip file extract it and keep it in below location
+
+
+Directory: C:\Users\wshaikh6\.azure-kubectl
+Mode                LastWriteTime         Length Name                                                                                
+----                -------------         ------ ----                                                                                
+-a----        2/28/2019   7:39 PM       34466816 kube-proxy.exe                                                                      
+-a----        2/28/2019   7:39 PM       36574720 kubeadm.exe                                                                         
+-a----         3/6/2019   8:42 PM       39670272 kubectl.exe                                                                         
+-a----        2/28/2019   7:39 PM      102774272 kubelet.exe                                                                         
+
+PS C:\Users\wshaikh6\.azure-kubectl> 
+
+
+The go the Azure portal Kubernetes services -> Overview  -> view Kubernetes Dashboard
+
+connect powelShell  @ location C:\Users\wshaikh6\.azure-kubectl enter the bwlow commands one by one 
+
+Connect-AzureRmAccount
+az aks install-cli
+az aks get-credentials --resource-group wsKube --name kub-aks-ws
+az aks browse --resource-group wsKube --name kub-aks-ws
+
+##########################output ##############################
+az : WARNING: Proxy running on http://127.0.0.1:8001/---------------------------> this is the url for the dashboard 
+At line:1 char:1
++ az aks browse --resource-group wsKube --name kub-aks-ws
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: Proxy ...127.0.0.1:8001/:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: Press CTRL+C to close the tunnel...
+Forwarding from 127.0.0.1:8001 -> 9090
+############################################################
+
+There you can do deployments and all.
