@@ -1,0 +1,11 @@
+commands in serial console in gcp
+cmd
+tasklist
+taskkill
+powershell
+
+
+kubectl get noddes
+kubeadm join -- help 
+elastic kuberneties servers
+basics of yamal
